@@ -1,0 +1,49 @@
+<mat-form-field appearance="outline">
+  <mat-label>فیلتر سال تولد</mat-label>
+  <mat-select (selectionChange)="filterPersons($event)">
+    <mat-option [value]="1">جوان</mat-option>
+    <mat-option [value]="2">نوجوان</mat-option>
+    <mat-option [value]="3">میانسال</mat-option>
+    <mat-option [value]="4">سالمند</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<ag-grid-angular
+  id="my-grid"
+  style="width: 100%; height: 100%"
+  class="ag-theme-alpine"
+  [columnDefs]="columnDefs"
+  [defaultColDef]="defaultColDef"
+  [enableRtl]="true"
+  [rowData]="filteredPersons"
+  [animateRows]="true"
+  (gridReady)="onGridReady()"
+  [gridOptions]="gridOptions"
+></ag-grid-angular>
+
+<div dir="rtl" class="form-box" id="content" *ngIf="editPersonId">
+  <form [formGroup]="personForm" (ngSubmit)="editPerson()">
+    <div class="w-100">
+      <mat-form-field appearance="outline" dir="rtl">
+        <mat-label>نام</mat-label>
+        <input matInput formControlName="firstName">
+      </mat-form-field>
+    </div>
+    <div class="w-100">
+
+      <mat-form-field appearance="outline" dir="rtl">
+        <mat-label>نام خانوادگی</mat-label>
+        <input matInput formControlName="lastName">
+      </mat-form-field>
+    </div>
+    <div class="w-100">
+
+      <mat-form-field appearance="outline" dir="rtl">
+        <mat-label>کد ملی</mat-label>
+        <input matInput formControlName="nationalId">
+      </mat-form-field>
+    </div>
+
+    <button type="submit" mat-raised-button color="primary">ثبت</button>
+  </form>
+</div>

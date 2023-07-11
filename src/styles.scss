@@ -1,0 +1,39 @@
+@import 'ag-grid-community/styles/ag-grid.css';
+@import 'ag-grid-community/styles/ag-theme-alpine.css';
+html, body {
+  height: 100%;
+  width: 100%;
+  padding: 5px;
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
+  font-family: 'Vazir FD-WOL' !important;
+}
+@font-face {
+  font-family: 'Vazir FD-WOL';
+  src: url('/assets/fonts/Vazir-Bold-FD-WOL.eot');
+  src: url('/assets/fonts/Vazir-Bold-FD-WOL.eot?#iefix') format('embedded-opentype'),
+  url('/assets/fonts/Vazir-Bold-FD-WOL.woff2') format('woff2'),
+  url('/assets/fonts/Vazir-Bold-FD-WOL.woff') format('woff'),
+  url('/assets/fonts/Vazir-Bold-FD-WOL.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+*:not(.ag-icon):not(.ag-wrapper){
+  font-family: 'Vazir FD-WOL' !important;
+
+}
+.my-green-class:nth-child(odd){
+  background: #f6f3f3 !important;
+}
+.my-green-class:nth-child(even){
+  background: #ffffff !important;
+}
+.w-100{
+  width:100%;
+}
+.form-box{
+  border:1px solid #ccc;
+  padding: 10px;
+  margin-top: 15px;
+}
